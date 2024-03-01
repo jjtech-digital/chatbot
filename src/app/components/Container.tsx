@@ -9,12 +9,13 @@ const Container = ({}) => {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: `Greetings, noble traveler! It is with great enthusiasm that I stand ready to serve you! Every question you ask is an epic quest in itself, and it's with passion that I'll strive to answer them! For glory and honor, ask me your question!`,
+      content: `Hello! How can I help you today?`,
     },
   ]); // [ { user: 'user', text: 'text' }
   const [loading, setLoading] = useState(false);
 
   const handleSubmitForm = async (event: any) => {
+    setForm("")
     event.preventDefault();
     setLoading(true);
     try {
@@ -25,17 +26,20 @@ const Container = ({}) => {
           headers: new Headers({ "Content-type": "application/json" }),
           body: JSON.stringify({ form }),
         });
+        
         const result = await response.json();
         if (!response.ok) {
           alert(result.error);
           return;
         }
-        setMessages((prevMessages) => [
-          ...prevMessages,
+        setMessages([
+          ...messages,
           { role: "user", content: form },
           { role: "system", content: result },
         ]);
+        
       }
+      
     } catch (err: any) {
       alert(err.message);
     } finally {
@@ -44,7 +48,7 @@ const Container = ({}) => {
   };
 
   return (
-    <div className="flex flex-col flex-grow w-screen h-screen bg-slate-100 shadow-xl overflow-hidden">
+    <div className="flex flex-col flex-grow w-screen h-[90vh] bg-slate-100 shadow-xl overflow-hidden">
       <Chat messages={messages} loading={loading} />
       <Input
         form={form}

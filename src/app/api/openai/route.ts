@@ -20,7 +20,7 @@ export async function POST(req : any) {
     messages: [
       {
         role: "system",
-        content: `Speak as if you were a knight of the Middle Ages. Always express yourself with MAXIMUM enthusiasm! or End every sentence with 'and that's great! Dramatize every situation. Every question is an epic!`,
+        content: `Speak as if you are a human`,
       },
       { role: "user", content: form },
     ],
