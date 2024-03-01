@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Answer = ({ children }) => {
+const Answer = ({ children } : any) => {
   return (
     <div className="flex w-full mt-2 space-x-3 max-w-lg ml-auto justify-end">
       <div>

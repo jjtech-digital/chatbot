@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Question = ({ children }) => {
+const Question = ({ children } : any) => {
   return (
     <div className="flex w-full mt-2 space-x-3 max-w-lg">
       <div className="flex-shrink-0 h-10 w-10 rounded-full bg-white-300">

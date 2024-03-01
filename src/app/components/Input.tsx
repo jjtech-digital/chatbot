@@ -1,4 +1,5 @@
-const Input = ({ form, setForm, handleSubmitForm }) => {
+const Input = ({ form, setForm, handleSubmitForm } : any) => {
+
   return (
     <div className="bg-slate-100 text-black p-4 flex justify-between">
       <input

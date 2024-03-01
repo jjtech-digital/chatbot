@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
+export async function POST(req : any) {
   // Extract the user's form input from the request body
   const { form } = await req.json();
   // Check for the API key in the environment variables
